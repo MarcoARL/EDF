@@ -1,0 +1,61 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+        <#if .locale == "zh_CN">
+        <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+        <#elseif .locale == "zh_TW">
+        <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+        <#elseif .locale == "ja_JP">
+        <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+        <#elseif .locale == "ko_KR">
+        <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+        <#elseif .locale == "th_TH">
+        <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+    </#if>
+    <style type="text/css">
+    </style>
+    </head>
+    <body  size="Letter">
+
+    <#list records as check>
+    <table width="100%">
+        <tr>
+            <td colspan="4"  align="right" height="45px">
+                <p style="margin: -20px 80px 30px 0px; padding: 5px;">
+                    Fecha
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center" height="45px">
+                <p style="margin: -20px 80px 30px 0px; padding: 5px;">
+                    Empresa
+                </p>
+            </td>
+            <td align="right" height="45px">
+                <p style="margin: -20px 80px 30px 0px; padding: 5px;">
+                    Monto
+                </p>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="4" align="center" >
+                <p style="margin: -20px 80px 30px 0px; padding: 5px;">
+                    ( Monto en letra )
+                </p>
+            </td>
+        </tr>
+
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    </#list>
+    </body>
+</pdf>

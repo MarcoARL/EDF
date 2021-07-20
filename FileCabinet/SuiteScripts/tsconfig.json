@@ -1,0 +1,111 @@
+GL113744
+KII76790
+KII76800
+KII76820
+KII76768
+
+
+
+{
+  "domain_prefix": "accesoriosrizer",
+  "environment": "prod",
+  "payload": {
+    "created_at": "2019-11-09 23:02:55",
+    "customer": {
+      "balance": "0.00000",
+      "company_name": "",
+      "contact_first_name": "MARIA CRUZ",
+      "contact_last_name": "HERNANDEZ SALAS",
+      "created_at": "2016-11-27 19:54:42",
+      "custom_field_1": "",
+      "custom_field_2": "",
+      "custom_field_3": "",
+      "custom_field_4": "",
+      "customer_code": "MARIA CRUZ-3DB4",
+      "customer_group_id": "b8ca3a6e-72c0-11e4-efc6-48f62e3c0146",
+      "date_of_birth": null,
+      "deleted_at": null,
+      "do_not_email": false,
+      "email": "maricruz.hdz@hotmail.com",
+      "enable_loyalty": true,
+      "fax": "",
+      "first_name": "MARIA CRUZ",
+      "id": "0624dbcd-ef5e-11e6-e0bb-b4db5695c3b1",
+      "last_name": "HERNANDEZ SALAS",
+      "loyalty_balance": "19.75000",
+      "mobile": "",
+      "note": "<p>COMPRA DE CRISTAL PARA IPHONE 6 27/11/16</p>",
+      "phone": "8711375420",
+      "points": 0,
+      "sex": "F",
+      "updated_at": "2019-11-06 19:53:31",
+      "year_to_date": "395.00000"
+    },
+    "customer_id": "0624dbcd-ef5e-11e6-e0bb-b4db5695c3b1",
+    "deleted_at": null,
+    "id": "06c2f1bf-e95e-11ea-efcf-034510958de8",
+    "invoice_number": "KII76768",
+    "note": "",
+    "outlet_id": "b8ca3a6e-725e-11e4-efc6-65e8b34df8d8",
+    "register_id": "b8ca3a6e-725e-11e4-efc6-65e8d0a7e3d9",
+    "register_sale_payments": [],
+    "register_sale_products": [
+      {
+        "discount": "0.00000",
+        "id": "06c2f1bf-e95e-11ea-efcf-034510942ab2",
+        "is_return": true,
+        "loyalty_value": "19.75000",
+        "note": null,
+        "price": "395.00000",
+        "price_set": true,
+        "price_total": "-395.00000",
+        "product_id": "06c2f1bf-e95e-11e9-efcf-ce59cb0b3640",
+        "quantity": -1,
+        "tax": "0.00000",
+        "tax_id": "b8ca3a6e-72c0-11e4-efc6-48f62e42a12c",
+        "tax_total": "0.00000",
+        "product_name": "POPSOCKETS ORIGINAL 2G BACKSPIN ALUM STARRY EYE",
+        "sku": "842978145686"
+      }
+    ],
+    "return_for": "1b812f13-5f0b-81a2-11ea-00c5eb0a8d19",
+    "sale_date": "2019-11-09T23:02:55Z",
+    "short_code": "zhmxds",
+    "source": "USER",
+    "source_id": null,
+    "status": "SAVED",
+    "taxes": [
+      {
+        "id": "2e438a15-48f6-11e4-8fc6-b8ca3a6e72c0",
+        "name": "No Tax",
+        "rate": "0.00000",
+        "tax": 0
+      }
+    ],
+    "totals": {
+      "total_loyalty": "-19.75000",
+      "total_payment": "0.00000",
+      "total_price": "-395.00000",
+      "total_tax": "0.00000",
+      "total_to_pay": "-395.00000"
+    },
+    "updated_at": "2019-11-09T23:02:55+00:00",
+    "user": {
+      "created_at": "2019-06-19 20:02:29",
+      "display_name": "OSCAR FERNANDEZ",
+      "email": "gyan.fernandez.gf@gmail.com",
+      "id": "06c2f1bf-e95e-11e9-efcf-92cd2ab49a6c",
+      "name": "oscar.gf",
+      "target_daily": null,
+      "target_monthly": null,
+      "target_weekly": null,
+      "updated_at": "2019-10-27 18:53:56"
+    },
+    "user_id": "06c2f1bf-e95e-11e9-efcf-92cd2ab49a6c",
+    "version": 12454050145,
+    "store": "accesoriosrizer",
+    "outlet_name": "Cuatro K 2do Piso"
+  },
+  "retailer_id": "b8ca3a6e-72c0-11e4-efc6-48f62e392caa",
+  "type": "sale.update"
+}

@@ -1,0 +1,387 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+        <#if .locale == "zh_CN">
+        <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+        <#elseif .locale == "zh_TW">
+        <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+        <#elseif .locale == "ja_JP">
+        <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+        <#elseif .locale == "ko_KR">
+        <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+        <#elseif .locale == "th_TH">
+        <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+    </#if>
+    <macrolist>
+        <macro id="nlheader">
+            &nbsp;
+        </macro>
+        <macro id="nlfooter">
+            <p style="text-align: center;"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span lang="ES" style="font-size:9.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:red">Propiedad de &ldquo;EDF Renewables M&eacute;xico&rdquo;</span></span></span><br /><span lang="ES" style="font-size:9.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">No debe utilizarse ni copiarse de ninguna forma sin el permiso expreso y por escrito de &ldquo;EDF Renewables M&eacute;xico&rdquo;</span></span></span></span></span></span><br /><span style="font-size:10px;"><pagenumber/></span>&nbsp;<span style="font-size:10px;">/</span>&nbsp;<span style="font-size:10px;"><totalpages/></span></p>
+        </macro>
+    </macrolist>
+    <style type="text/css">* {
+        <#if .locale == "zh_CN">
+        font-family: NotoSans, NotoSansCJKsc, sans-serif;
+        <#elseif .locale == "zh_TW">
+        font-family: NotoSans, NotoSansCJKtc, sans-serif;
+        <#elseif .locale == "ja_JP">
+        font-family: NotoSans, NotoSansCJKjp, sans-serif;
+        <#elseif .locale == "ko_KR">
+        font-family: NotoSans, NotoSansCJKkr, sans-serif;
+        <#elseif .locale == "th_TH">
+        font-family: NotoSans, NotoSansThai, sans-serif;
+        <#else>
+        font-family: NotoSans, sans-serif;
+        </#if>
+    }
+    table {
+        font-size: 9pt;
+        table-layout: fixed;
+    }
+    th {
+        font-weight: bold;
+        font-size: 8pt;
+        vertical-align: middle;
+        padding: 5px 6px 3px;
+        background-color: #e3e3e3;
+        color: #333333;
+    }
+    td {
+        padding: 4px 6px;
+    }
+    td p { align:left }
+    b {
+        font-weight: bold;
+        color: #333333;
+    }
+    table.header td {
+        padding: 0;
+        font-size: 10pt;
+    }
+    table.footer td {
+        padding: 0;
+        font-size: 8pt;
+    }
+    table.itemtable th {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    table.body td {
+        padding-top: 2px;
+    }
+    table.total {
+        page-break-inside: avoid;
+    }
+    tr.totalrow {
+        background-color: #e3e3e3;
+        line-height: 200%;
+    }
+    td.totalboxtop {
+        font-size: 12pt;
+        background-color: #e3e3e3;
+    }
+    td.addressheader {
+        font-size: 8pt;
+        padding-top: 6px;
+        padding-bottom: 2px;
+    }
+    td.address {
+        padding-top: 0;
+    }
+    td.totalboxmid {
+        font-size: 28pt;
+        padding-top: 20px;
+        background-color: #e3e3e3;
+    }
+    td.totalboxbot {
+        background-color: #e3e3e3;
+        font-weight: bold;
+    }
+    span.title {
+        font-size: 28pt;
+    }
+    span.number {
+        font-size: 16pt;
+    }
+    span.itemname {
+        font-weight: bold;
+        line-height: 150%;
+    }
+    hr {
+        width: 100%;
+        color: #d3d3d3;
+        background-color: #d3d3d3;
+        height: 1px;
+    }
+    span.b {
+        color:#001a70;
+    }
+    </style>
+    </head>
+    <body header="nlheader" header-height="4%" footer="nlfooter" footer-height="20pt" padding="0.5in 0.5in 0.5in 0.5in" size="Letter">
+    <table><tr>
+        <td>
+            <#if RECORD_PDF[0].subsidiaria_logo?has_content>
+            <#assign x = RECORD_PDF[0].subsidiaria_logo>
+            <#escape x as x?html>
+            <img src="${x}" style="float: left;" />
+        </#escape>
+    </#if>
+        </td>
+        </tr></table>
+
+    <table class="header" style="width: 100%;"><tr>
+        <td align="right"><span padding="1" style="color:#001a70; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;"><b style="color:#001a70">N&uacute;mero de OC:</b> ${RECORD_PDF.num_pedido} </span></td>
+    </tr></table>
+
+    <table style="border: 1px solid black;" width="100%"><tr>
+        <td style="border-right: 1px solid black;" width="40%">
+      <span style="color:#001a70;">
+      ${RECORD_PDF[0].subsidiaria_adress} <br /> <br />
+        R.F.C: ${RECORD_PDF[0].subsidiaria_rfc} <br /> <br />
+        ${RECORD_PDF[0].phone}  <br /> <br />
+           www.edf-re.mx
+           </span></td>
+        <td roswpan="2" width="60%">&nbsp;</td>
+    </tr>
+    </table>
+
+    <table style="border-right: 1px solid black; border-left: 1px solid black;" width="100%"><tr>
+        <td style="border-right: 1px solid black;" width="48.4%">&nbsp;</td>
+        <td style="color:#001a70;" width="51.6%"><b style="color:#001a70">PROYECTO :</b> ${RECORD_PDF[0].memo}</td>
+    </tr>
+        <tr>
+            <td align="center" style="border-top: 1px solid black; border-right: 1px solid black; color:#001a70;"><b style="color:#001a70">DATOS DEL PROVEEDOR</b></td>
+            <td align="center" style="border-top: 1px solid black; color:#001a70;"><b style="color:#001a70">INFORMACI&Oacute;N DEL PEDIDO</b></td>
+        </tr></table>
+
+
+    <table style="border: 1px solid black;" width="100%"><tr>
+        <td style="color:#001a70;">Raz&oacute;n Social:</td>
+        <td><span style="color:#001a70">${RECORD_PDF[0].razon_social}</span>  </td>
+        <td style="border-bottom: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; color:#001a70;">LUGAR Y FECHA DE EMISI&Oacute;N:</td>
+        <td style="border-bottom: 1px solid black; color:#001a70;">${RECORD_PDF[0].fecha_emision}</td>
+    </tr>
+        <tr>
+            <td style="color:#001a70;">Domicilio:</td>
+            <td style="color:#001a70;">${RECORD_PDF[0].billadress}</td>
+            <td style="border-bottom: 1px solid black; border-right: 1px  solid black; border-left: 1px solid black; color:#001a70;">PLAZO DE ENTREGA:</td>
+            <td style="border-bottom: 1px solid black; color:#001a70;">${RECORD_PDF[0].fecha_entrega}</td>
+        </tr>
+
+        <tr>
+            <td style="color:#001a70;">Telefono</td>
+            <td style="color:#001a70;"><#if RECORD_PDF[0].telefono_vendor?has_content >${RECORD_PDF[0].telefono_vendor} </#if></td>
+            <td style="border-bottom: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; color:#001a70;">LUGAR DE ENTREGA:</td>
+            <td style="border-bottom: 1px solid black; color:#001a70;"> <#if RECORD_PDF[0].direccion_entrega?has_content> ${RECORD_PDF[0].direccion_entrega}</#if> </td>
+        </tr>
+
+        <tr>  <td style="color:#001a70;">E-mail:</td>
+            <td style="color:#001a70;"><#if RECORD_PDF[0].email_contacto_principal?has_content> ${RECORD_PDF[0].email_contacto_principal} </#if></td>
+            <td style="border-left: 1px solid black; border-right: 1px solid black;">  </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td style="color:#001a70;">VendorE-mail:</td>
+            <td style="color:#001a70;"> ${RECORD_PDF[0].email_solicitante}</td>
+            <td style="border-right: 1px solid black; border-left: 1px solid black; color:#001a70;">CONDICIONES DE PAGO:</td>
+            <td style="color:#001a70;">  ${RECORD_PDF[0].terminos} </td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">Representante Legal:</td>
+            <td style="color:#001a70;">${RECORD_PDF[0].rep_legal}</td>
+            <td style="border-right:1px solid black; border-left:1px solid black; color:#001a70;">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr></table>
+
+
+    <table style="border-left: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black;"><tr>
+        <td style="color:#001a70;">&quot;OC suscrita entre ${RECORD_PDF[0].subsidiaria}, representada por (Nombre del representante legal de la subsidiaria), en adelante EL CLIENTE, y ${RECORD_PDF[0].razon_social}, representada por &quot; ${RECORD_PDF[0].rep_legal}&quot;, en adelante EL PROVEEDOR, ambas empresas denominadas en forma individual como LA PARTE y en forma conjunta como LAS PARTES, con apego a las siguientes Declaraciones y Cl&aacute;usulas:&quot;</td>
+    </tr>
+        <tr>
+            <td align="center" style="border-bottom: 1px solid black; border-top: 1px solid black; color:#001a70;"><b style="color:#001a70">DECLARACIONES:</b></td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">I. Declara el representante de EL CLIENTE</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">a) Que su representada es una sociedad mercantil, legalmente constituida de conformidad con las leyes de la Rep&uacute;blica Mexicana.</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">b) Que su representante legal, tiene las facultades legales para celebrar la presente OC.</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">c) Que requiere de &ldquo;EL PROVEEDOR&rdquo; el suministro de los Bienes y/o Servicios que se relacionan en la Clausula 1 de esta OC.</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">II. Declara el representante de EL PROVEEDOR</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">a) Que su representada es una sociedad mercantil, legalmente constituida de conformidad con las leyes de la Rep&uacute;blica Mexicana.</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">b) Que su Representante Legal, tiene las facultades legales para celebrar la presente OC, y para obligar a su representada en el cumplimiento de las condiciones que el se estipulan.</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">c) Que re&uacute;ne las condiciones t&eacute;cnicas, f&iacute;sicas y econ&oacute;micas para llevar a cabo lo relacionado con esta OC, de acuerdo a las condiciones estipuladas en el mismo.</td>
+        </tr></table>
+
+    <table width="100%" style="margin-top: 130px;"><tr>
+        <td align="center" style="border: 1px solid black; color:#001a70; "><b style="color:#001a70">CL&Aacute;USULAS:</b></td>
+    </tr></table>
+
+    <table width="100%"><tr>
+        <td align="center" style="border-left: 1px solid black; color:#001a70;" width="10%">1</td>
+        <td style="border-left: 1px solid black; border-right: 1px solid black; color:#001a70;" width="90%">OBJETO: Con la forma de esta OC, EL PROVEEDOR se obliga para con EL CLIENTE a suministrar los bienes y/o servicios (los &quot;Bienes y/o Servicios&quot;) que se relacionan a continuaci&oacute;n: </td>
+    </tr></table>
+    <#if RECORD_PDF[0].items?has_content>
+
+    <table class="itemtable" style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;"><!-- start items --><#list RECORD_PDF[0].items as item>
+        <tr>
+            <td align="center" colspan="3" line-height="150%" style="border-bottom: 1px solid black; border-right: 1px solid black; color:#001a70;">${item.index}</td>
+            <td colspan="9" style="border-bottom: 1px solid black; border-right: 1px solid black; color:#001a70;">
+                <#assign x = item.description>
+                <#escape x as x?html>
+                <span class="itemname">${item.item}</span><br />${item.description}
+            </#escape>
+            </td>
+            <td colspan="3" style="border-right: 1px solid black; border-bottom: 1px solid black; color:#001a70; ">  ${item.mpn} </td>
+            <td align="center" colspan="3" style="border-bottom: 1px solid black; border-right: 1px solid black; color:#001a70;">${item.units}</td>
+            <td align="center" colspan="4" style="border-bottom: 1px solid black; border-right: 1px solid black; color:#001a70;">${item.quantity}</td>
+            <td align="center" colspan="4" style="border-bottom: 1px solid black; border-right: 1px solid black; color:#001a70;">${item.rate}</td>
+            <td align="center" colspan="4" style="border-bottom: 1px solid black; color:#001a70;">${item.amount}</td>
+        </tr>
+    </#list><!-- end items --></table>
+    </#if>
+
+    <table width="100%"><tr>
+        <td width="20%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+        <td style="color:#001a70;" width="19.8%">&nbsp;</td>
+        <td style="border-left: 1px solid black;  color:#001a70;" width="13.4%">&nbsp;</td>
+        <td style="border-right: 1px solid black; border-left: 1px solid black; color:#001a70;" width="13.4%">SUB-TOTAL</td>
+        <td style="border-right: 1px solid black; color:#001a70;" width="13.4%" align="right">${RECORD_PDF[0].subtotal}</td>
+    </tr>
+        <tr>
+            <td width="20%">&nbsp;</td>
+            <td width="20%">&nbsp;</td>
+            <td  width="19.8%">&nbsp;</td>
+            <td style="border-left: 1px solid black;  color:#001a70;" width="13.4%">IVA</td>
+            <td style="border-left: 1px solid black; border-top: 1px solid black; border-right: 1px solid black; color:#001a70;" width="13.4%" align="center">16%</td>
+            <td style="border-right: 1px solid black; color:#001a70;" width="13.4%" align="right" >${RECORD_PDF[0].taxtotal}</td>
+        </tr>
+        <tr>
+            <td width="20%">&nbsp;</td>
+            <td width="20%">&nbsp;</td>
+            <td  width="19.8%">&nbsp;</td>
+            <td style="border-bottom: 1px solid black; border-left: 1px solid black; " width="13.4%">&nbsp;</td>
+            <td style="border-left: 1px solid black; border-bottom: 1px solid black; border-top: 1px solid black; border-right: 1px solid black; color:#001a70;" width="13.4%">Monto total</td>
+            <td style="border-right: 1px solid black; border-bottom: 1px solid black; border-top: 1px solid black; color:#001a70;" width="13.4%" align="right" >${RECORD_PDF[0].total}</td>
+        </tr></table>
+
+    <table><tr>
+        <td style="color:#001a70;">2</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">ESTIPULACIONES COMERCIALES</span></span></span></b></span></span></span></td>
+    </tr>
+        <tr>
+            <td style="color:#001a70;">2.1</td>
+            <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">PRECIOS</span></span></span></b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">.&nbsp; Los precios son firmes, hasta el cumplimiento del 100% de esta OC. EL CLIENTE tendr&aacute; absoluto derecho a reducir el monto de la presente OC, si los Bienes y/o Servicios que ampara no son totalmente realizados y/o totalmente entregados a entera satisfacci&oacute;n de EL CLIENTE conforme a lo indicado en esta OC y sus anexos. Esto tambi&eacute;n aplicar&aacute; si en la revisi&oacute;n final de cantidades y precios unitarios EL CLIENTE determina que una vez completados los Bienes y/o Servicios, el monto total de los mismos result&oacute; ser menor conforme a las cantidades y precios unitarios utilizados para cuantificar los Bienes y/o Servicios.</span></span></span></span></span></span></td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">2.2</td>
+            <td style="color:#001a70;"><strong>Moneda. </strong> Los precios est&aacute;n dados en: &nbsp;${RECORD_PDF[0].currency}</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">2.3</td>
+            <td style="color:#001a70;"><strong>Forma de pago </strong><strong>:</strong>Los pagos son hechos con transferencia bancaria; a un plazo de ${RECORD_PDF[0].terminos} Las Facturas deben ser enviadas junto con su soporte en formato electr&oacute;nico a <#list RECORD[0].items as item> <#if item.linkedorder?has_content>${item.linkedorder}</#if>  </#list>
+        ${RECORD_PDF[0].email_solicitante}</td>
+        </tr>
+        <tr>
+            <td style="color:#001a70;">&nbsp;</td>
+
+        </tr>
+    </table>
+    <br />
+
+    <#if RECORD_PDF[0].hitos?has_content>
+    <table class="itemtable" style="border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" width="100%"><!-- start items --><#list RECORD_PDF[0].hitos as hito>
+
+
+        <tr height="30px">
+            <td style="color:#001a70; border-bottom: 1px solid black; border-right: 1px solid black; " > ${hito.descripcion_hito}</td>
+            <td style="color:#001a70; border-bottom: 1px solid black; border-right: 1px solid black; " >${hito.importe_hito}</td>
+            <td style="color:#001a70; border-bottom: 1px solid black; " >${hito.terminos_hito}</td>
+        </tr>
+    </#list><!-- end items --></table>
+</#if>
+
+
+
+<br />
+<table>
+    <tr>
+        <td style="color:#001a70;">2.4</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">FECHA(S) DE ENTREGA</span></span></span></b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">.&nbsp; </span></span></span></span></span></span><br /><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">Los Bienes y/o Servicios se entregar&aacute;n conforme a las fechas estipuladas en la car&aacute;tula de la presente OC.<br />EL PROVEEDOR&nbsp; conviene expresamente que EL CLIENTE&nbsp; tendr&aacute; derecho a cancelar total o parcialmente la presente OC sin responsabilidad alguna, en caso de que se presente cualquier tipo de retraso respecto de la entrega de los Bienes y/o Servicios que ampara esta&nbsp; OC, para ello bastar&aacute; una simple notificaci&oacute;n que EL CLIENTE haga de ello ya sea por escrito,o bien mediante correo o correo electr&oacute;nico.&nbsp; Convienen las Partes, asimismo que EL CLIENTE tendr&aacute; todo el derecho de rechazar total o parcialmente los Bienes y/o Servicios objeto de la presente OC, para el caso de que exista el menor retraso en la entrega de los mismos, conforme con los plazos estipulados en la presente OC.<br />Para el caso de que se presente cualquier retraso en la entrega y/o prestaci&oacute;n de los Bienes y/o Servicios correspondientes seg&uacute;n el plazo estipulado en la presente OC, EL CLIENTE podr&aacute; efectuar un descuento equivalente al 1% (uno por ciento) del precio que EL PROVEEDOR debiera recibir con motivo de lo estipulado en la presente OC, por cada d&iacute;a de retraso en que&nbsp; EL PROVEEDOR incurra, para la entrega/prestaci&oacute;n de los Bienes y/o Servicios correspondientes, hasta un m&aacute;ximo de 50% del monto de la presente OC. EL CLIENTE podr&aacute; efectuar lo anterior sin necesidad de previa notificaci&oacute;n de ninguna &iacute;ndole PROVEEDOR.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.5</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">LUGAR DE ENTREGA</span></span></span></b><br /><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">Los Bienes y/o Servicios se entregar&aacute;n en el lugar que indique EL CLIENTE de conformidad con lo estipulado en la car&aacute;tula de la presente OC.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.6</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">CALIDAD, INSPECCI&Oacute;N DE LOS BIENES Y SERVICIOS.</span></span></span></b></span></span></span><br /><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">&nbsp;Las deficiencias o fallas que se presentaren los Bienes y/o Servicios deber&aacute;n ser solucionadas por EL PROVEEDOR en un plazo m&aacute;ximo de 24 horas&nbsp; contados a partir de la fecha en la que EL CLIENTE se las haya notificado.&nbsp; En caso de que no se cumpla con el plazo establecido en la presente Cl&aacute;usula el CLIENTE estar&aacute; facultado para efectuar las retenciones correspondientes conforme a lo establecido en la presente cl&aacute;usula. EL PROVEEDOR se compromete para con EL CLIENTE a reemplazar cuando &eacute;ste lo solicite y sin costos adicionales, los Bienes y/o Servicios defectuosos por uno de caracteristicas iguales. Asimismo, EL PROVEEDOR&nbsp; asume la obligaci&oacute;n de reparar o reemplazar los Bienes y/o Servicios&nbsp; que contengan defectos o vicios ocultos.&nbsp; Cualquier Bien y/o Servicio que hubiera que reemplazar por defecto, tendr&aacute; una garant&iacute;a adicional de 12 meses a partir de su reemplazo. Sin perjuicio de lo anterior, las Partes convienen en que EL CLIENTE tendr&aacute; todo el derecho de rechazar total o parcialmente los Bienes y/o Servicios objeto de la presente OC realizados o suministrados por EL PROVEEDOR,en caso de que EL CLIENTE determine que la calidad de los mismos no es la correcta.EL PROVEEDOR&nbsp; conviene expresamente que EL CLIENTE&nbsp; tendr&aacute; derecho a cancelar total o parcialmente la presente OC sin responsabilidad alguna, en caso de que se presente una falta de calidad de los Bienes y/o Servicios que ampara esta OC, para ello bastar&aacute; una simple notificaci&oacute;n que EL CLIENTE haga de ello ya sea por escrito,o bien mediante correo o correo electr&oacute;nico. </span></span></span></span></span></span><br /><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">De conformidad con lo anterior EL CLIENTE tendr&aacute; el derecho a retener el pago a efectuarse al PROVEEDOR, en tanto duren los eventuales ex&aacute;menes de calidad o los trabajos complementarios o correctivos que EL CLIENTE ya sea por si o a trav&eacute;s de terceros decida efectuar a los Bienes y/o Servicios objeto de la presente OC&nbsp; y hasta que se obtengan los resultados de los mismos. Si los resultados indican que los Bienes y/o Servicios objeto de la presente OC presentan defectos y/o calidad inferior a la solicitada por EL CLIENTE &eacute;ste tendr&aacute; derecho a descontar el costo de dichos ex&aacute;menes de calidad o los trabajos complementarios o correctivos del precio a ser pagado al PROVEEDOR. Los descuentos tambi&eacute;n ser&aacute;n aplicables cuando EL CLIENTE determine que la calidad de&nbsp; los Bienes y/o Servicios objeto de la presente OC no es la correcta, luego de haber hecho una revisi&oacute;n inicial de tales Bienes y/o Servicios. Sin perjuicio de lo indicado anteriormente,&nbsp; EL PROVEEDOR conviene que EL CLIENTE tendr&aacute; el derecho de retener los Bienes y/o Servicios objeto de la presente OC que hayan sido realizados o suministrados, como garant&iacute;a del pago de los gastos que deba de erogar y/o que se originen con motivo de los eventuales defectos y/o calidad inferior de dichos Bienes y/o Servicios.<br />En caso de que los Bienes y/o Servicios no sean corregidos en el tiempo requerido por EL CLIENTE, &eacute;ste estar&aacute; facultado para contratar el suministro de los bienes o&nbsp; la prestaci&oacute;n de dicho servicio a otro proveedor corriendo los gastos por cuenta de EL PROVEEDOR.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.7</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">ENTREGA DE INFORMACI&Oacute;N</span></span></span></b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">.&nbsp; EL PROVEEDOR se obliga para con EL CLIENTE a la entrega de cat&aacute;logos, informaci&oacute;n t&eacute;cnica y manuales de operaci&oacute;n y mantenimiento para el adecuado uso y mantenimiento de los Bienes y/o Servicios.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.8</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">DOMICILIOS Y NOTIFICACIONES</span></span></span></b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">.&nbsp; Salvo por disposici&oacute;n en contrar&iacute;o contenida en la presente OC, todo aviso y dem&aacute;s comunicaciones entre LAS PARTES emitidos de conformidad con este Pedido, deber&aacute;n hacerse por escrito y ser&aacute;n efectivas al momento de su recepci&oacute;n por el destinatario en los Domicilios que se indican en el encabezado de este OC.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.9</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">RESPONSABILIDAD LABORAL Y DE SEGURIDAD SOCIAL. </span></span></span></b><br /><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">El PROVEEDOR como empresario y patr&oacute;n del personal que ocupe con motivo de esta OC, cuenta con elementos propios suficientes para cumplir las obligaciones que derivan de las relaciones con sus trabajadores, por lo que es el &uacute;nico y exclusivo responsable de su personal, por lo que la direcci&oacute;n, supervisi&oacute;n y capacitaci&oacute;n del mismo corren a su cargo. En atenci&oacute;n a ello, EL PROVEEDOR ser&aacute; el &uacute;nico y exclusivo responsable de todas las obligaciones derivadas de las disposiciones legales en materia de trabajo, de seguridad social y fiscales en relaci&oacute;n con su personal. </span></span></span></span></span></span><br /><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">En caso de que alguno de los trabajadores de EL PROVEEDOR&nbsp; llegaren a presentar&nbsp; una demanda laboral en contra, directa o indirectamente, de EL CLIENTE y/o de alguno de sus funcionarios y/o empleados, el PROVEEDOR los deber&aacute; sacar a paz y salvo. Toda la actuaci&oacute;n y todos los costos y gastos en que tenga que incurrir EL CLIENTE para defender sus propios intereses y/o los de sus funcionarios y/o los de sus empleados que hubieren sido demandados, se entender&aacute;n que son a cargo y de la exclusiva responsabilidad del PROVEEDOR, quien tambi&eacute;n deber&aacute; pagar cualquier cantidad a la que EL CLIENTE y/o sus funcionarios y/o empleados y/o el Subcontratista hubieren sido condenados en el juicio laboral. En caso de que el juicio laboral no se concluya totalmente en el plazo de 6 (seis) meses, contados a partir de la fecha del emplazamiento a EL CLIENTE, &eacute;ste queda autorizado para, en cualquier momento posterior a la terminaci&oacute;n del citado plazo, pagar al trabajador que hubiere presentado la demanda, una cantidad equivalente al total de las indemnizaciones, salarios y prestaciones que hubiere demandado, cuantific&aacute;ndose tales indemnizaciones, salarios y prestaciones demandados en funci&oacute;n del monto del salario que se contenga en la demanda laboral, con el objeto de dar por terminado el conflicto laboral por lo que se refiere a EL CLIENTE y/o sus funcionarios y/o empleados.&nbsp; La cantidad as&iacute; pagada, o cualquier otra que EL CLIENTE hubiere tenido que pagar derivada de reclamaciones y/o demandas y/o quejas de los trabajadores de el PROVEEDOR o de los subcontratistas de &eacute;ste, podr&aacute; ser descontada por EL CLIENTE al PROVEEDOR&nbsp; de cualesquier pago que adeudare al PROVEEDOR por cualquier concepto y no podr&aacute; ser reclamada bajo ninguna circunstancia por el EL PROVEEDOR a EL CLIENTE, entendi&eacute;ndose que fue pagada directamente al PROVEEDOR para efectos del presente contrato. En ning&uacute;n caso EL CLIENTE y/o sus funcionarios y/o sus empleados ser&aacute;n responsables del pago de las indemnizaciones, salarios y prestaciones que adeude el PROVEEDOR al trabajador que hubiere presentado la demanda, queja o reclamaci&oacute;n.</span></span></span></span></span></span><br /><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">El PROVEEDOR ser&aacute; responsable de todos los da&ntilde;os y perjuicios que se causen a EL CLIENTE y/o sus funcionarios y/o empleados que se originen por el incumplimiento del Subcontratista a alguna o algunas o todas las obligaciones que asume en la presente cl&aacute;usula, incluy&eacute;ndose dentro de dichos da&ntilde;os y perjuicios los honorarios de los abogados que EL CLIENTE tenga que pagar para intervenir en el asunto de que se trate, as&iacute; como los gastos legales y vi&aacute;ticos (transportaci&oacute;n, alojamiento y hospedaje) que, en su caso, se originen por la atenci&oacute;n del asunto de que se trate fuera del lugar donde EL CLIENTE&nbsp; tiene su domicilio fiscal y social.&nbsp; Para resarcirse de los da&ntilde;os y perjuicios causados,EL CLIENTE&nbsp; podr&aacute; descontarlos directamente de cualquier anticipo, factura y/o recibo y/o cualquier otra cantidad a favor de EL PROVEEDOR. Lo anterior sin perjuicio del derecho de EL CLIENTE de rescindir este contrato y de las dem&aacute;s consecuencias jur&iacute;dicas que se deriven del mismo.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.10</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">CONFIDENCIALIDAD.</span></span></span></b><br /><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">EL PROVEEDOR se compromete a mantener en confidencialidad y secreto, toda la informaci&oacute;n financiera, t&eacute;cnica, comercial, los datos, especificaciones, procesos y en general toda la informaci&oacute;n a la cual tenga acceso, previamente y durante la entrega o prestaci&oacute;n de los Bienes y/o Servicios objeto de la presente OC. El Proveedor se compromete a que la confidencialidad indicada en el p&aacute;rrafo anterior, sea mantenida en todo momento por sus empleados, ex empleados, subcontratistas, accionistas, directores, factores, apoderados, gerentes, dependientes, clientes, proveedores y/o por cualquier persona f&iacute;sica o moral con la cual tenga cualquier clase de trato o relaci&oacute;n, asumiendo expresamente dicha responsabilidad y subrog&aacute;ndose respecto a las responsabilidades y/o obligaciones en que cualquiera de tales personas pudiera incurrir al revelar la confidencialidad se&ntilde;alada en esta cl&aacute;usula. El PROVEEDOR conviene expresamente en pagar a EL CLIENTE, la totalidad de los da&ntilde;os y perjuicios, gastos, costas y honorarios profesionales y dem&aacute;s gastos causados, que en su caso EL CLIENTE le llegara a requerir, para el caso de que se presenten incumplimientos de las obligaciones de Confidencialidad a cargo de EL PROVEEDOR,&nbsp; ya sea directamente por EL PROVEEDOR o por cualquiera de sus empleados, ex empleados, subcontratistas, accionistas, directores, factores, apoderados, gerentes, dependientes, clientes, proveedores y/o por cualquier persona f&iacute;sica o moral con la cual tenga cualquier clase de trato o relaci&oacute;n directa o indirecta con El Proveedor.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.11</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">ANTICORRUPCI&Oacute;N</span></span></span></b><br /><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">El PROVEEDOR se obliga a cumplir con todas las disposiciones contra la corrupci&oacute;n establecidas en las leyes internacionales y mexicanas, las cuales proh&iacute;ben el soborno y similares pr&aacute;cticas contrarias a la &eacute;tica, as&iacute; como con las pol&iacute;ticas de &eacute;tica y anticorrupci&oacute;n del CLIENTE, del Grupo EDF, y en lo particular a no realizar, ofrecer, prometer o autorizar, ni directamente ni por medio de sus socios, administradores, directivos, empleados, consultores, agentes, un pago o cualquier otra acci&oacute;n que infrinja la legislaci&oacute;n aplicable o las pol&iacute;ticas de &eacute;tica y anticorrupci&oacute;n del Grupo EDF y EL CLIENTE. Forman parte de la presente OC el C&oacute;digo De &Eacute;tica del Grupo EDF, as&iacute; como las Pol&iacute;ticas Anticorrupci&oacute;n de EL CLIENTE, mismas que el PROVEEDOR reconoce y firma de conformidad adjunt&aacute;ndose al presente contrato&nbsp; como &ldquo;Anexo ___&rdquo;. </span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.12</td>
+        <td><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span lang="ES" style="font-size:9.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">J</span></span></span></b><b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">URISDICCI&Oacute;N</span></span></span></b><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">. Las partes convienen, en someterse a la jurisdicci&oacute;n de los tribunales y al imperio de las leyes vigentes en la Ciudad de M&eacute;xico, para cualquier interpretaci&oacute;n o controversia respecto a la interpretaci&oacute;n o cumplimiento del presente contrato, renunciando expresamente a cualquier otro fuero que en raz&oacute;n de sus domicilios presentes o futuros o por cualquier otra raz&oacute;n, pudieran corresponderles.</span></span></span></span></span></span><br /><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span lang="ES" style="font-size:8.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#001a70">A juicio de EL CLIENTE, los errores mecanogr&aacute;ficos est&aacute;n sujetos a correcci&oacute;n.</span></span></span></span></span></span></td>
+    </tr>
+    <tr>
+        <td style="color:#001a70;">2.13</td>
+        <td style="color:#001a70;">A juicio de EL CLIENTE, los errores mecanogr&aacute;ficos est&aacute;n sujetos a correcci&oacute;n.</td>
+    </tr></table>
+
+<table style="border: 1px solid black; margin-top: 110px;" width="100%"><tr>
+    <td height="50px" style="border-right:1px solid black; border-bottom: 1px solid black; color:#001a70;">Elabor&oacute; (Nombre y Firma) :</td>
+    <td height="50px" style="border-bottom: 1px solid black; color:#001a70;">Revis&oacute; (Nombre y Firma) (Gerente) :</td>
+</tr>
+    <tr>
+        <td align="center" height="20px" style="border-right:1px solid black; border-bottom: 1px solid black; color:#001a70;">Fecha:</td>
+        <td align="center" height="20px" style="border-bottom: 1px solid black; color:#001a70;">Fecha:</td>
+    </tr>
+    <tr>
+        <td height="50px" style="border-right:1px solid black; border-bottom: 1px solid black; color:#001a70;">&nbsp;</td>
+        <td height="50px" style="border-bottom: 1px solid black; color:#001a70;">&nbsp;</td>
+    </tr>
+    <tr>
+        <td align="center" height="20px" style="border-right:1px solid black; border-bottom: 1px solid black; color:#001a70;">POR &quot;EL CLIENTE&quot;:</td>
+        <td align="center" height="20px" style="border-bottom: 1px solid black; color:#001a70;">POR &quot;EL PROVEEDOR&quot;:</td>
+    </tr>
+    <tr>
+        <td height="50px" style="border-right:1px solid black; color:#001a70;">&nbsp;</td>
+        <td height="50px">&nbsp;</td>
+    </tr></table>
+</body>
+</pdf>

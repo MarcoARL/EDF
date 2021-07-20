@@ -1,0 +1,198 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+        <#if .locale == "zh_CN">
+        <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+        <#elseif .locale == "zh_TW">
+        <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+        <#elseif .locale == "ja_JP">
+        <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+        <#elseif .locale == "ko_KR">
+        <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+        <#elseif .locale == "th_TH">
+        <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+    </#if>
+    <style type="text/css">* {
+        <#if .locale == "zh_CN">
+        font-family: NotoSans, NotoSansCJKsc, sans-serif;
+        <#elseif .locale == "zh_TW">
+        font-family: NotoSans, NotoSansCJKtc, sans-serif;
+        <#elseif .locale == "ja_JP">
+        font-family: NotoSans, NotoSansCJKjp, sans-serif;
+        <#elseif .locale == "ko_KR">
+        font-family: NotoSans, NotoSansCJKkr, sans-serif;
+        <#elseif .locale == "th_TH">
+        font-family: NotoSans, NotoSansThai, sans-serif;
+        <#else>
+        font-family: NotoSans, sans-serif;
+        </#if>
+    }
+
+    </style>
+    </head>
+    <body padding="0.5in 0.5in 0.5in 0.5in" size="Letter" style="font-family: Helvetica,sans-serif;font-size: 8pt;">
+
+    <#list RECORD_PDF[0] as check>
+
+    <#if check.expenses?has_content>
+
+    <#list check.expenses as expense>
+
+    <table width='100%' class='tabla'>
+        <tr>
+            <td style="width:35%">
+                <#if RECORD_PDF[0].logo?has_content>
+                <#assign x = RECORD_PDF[0].logo>
+                <#escape x as x?html>
+                <img src="${x}" style="margin: 0px" />
+            </#escape>
+        </#if>
+            </td>
+            <td align="left" style="font-size: 15px;vertical-align:middle;width:65%;padding-left:10px;font-weight: bold" height='50px'>Formato Egreso</td>
+        </tr>
+    </table>
+    <table width="100%" class='tabla' style='margin-top:20px'>
+        <tr>
+            <td style="width:50%;vertical-align: middle"><b>Cuenta de Retiro:</b></td>
+            <td style="width:15%"></td>
+            <td style="width:35%;vertical-align: middle" align="right">
+                <b style="text-align: right">Fecha:</b> ${check.fecha}
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%;vertical-align: middle">${check.subsidiaria} <br />${check.subsidiaria_address}</td>
+            <td style="width:15%"></td>
+            <td style="width:35%;vertical-align: middle">
+
+            </td>
+        </tr>
+        <tr>
+            <td style="width:60%;vertical-align: middle"><b>Banco:</b> ${check.nombre_banco} <br /><b>Cuenta:</b> ${check.numero_cuenta} </td>
+            <td style="width:5%"></td>
+            <td style="width:35%;vertical-align: middle">
+
+            </td>
+        </tr>
+
+    </table>
+
+    <table width="100%" class='tabla' style="margin-top:30px">
+        <tr>
+            <td style="width:60%;vertical-align: middle"><b>Cuenta Deposito:</b></td>
+            <td style="width:5%"></td>
+            <td style="width:35%;vertical-align: middle">
+            </td>
+        </tr>
+        <tr>
+            <td style="width:60%;vertical-align: middle">${check.entity}<br />${check.entity_direccion}<br /><b>Banco:</b> ${check.entity_banco} <br /><b>Cuenta:</b> ${check.entity_cuenta}</td>
+            <td></td>
+            <td></td>
+        </tr></table>
+
+    <table width="100%" class='tabla' style="margin-top:20px">
+        <tr>
+            <td width="100%" height='50px'><b>Concepto:</b> ${check.notas}</td>
+
+        </tr>
+    </table>
+    <table width='100%' class='tabla'>
+        <tr>
+            <td width='50%' height='50px'><b>Importe:</b> ${check.importe}</td>
+            <td width='50%'><b>Monto Letra:</b> ${check.monto_letra}</td>
+        </tr>
+    </table>
+
+
+
+    </#list>
+
+</#if>
+
+<#if check.items?has_content>
+<div align="center" style="position: relative;font-family: Helvetica,sans-serif;top= -11pt;height: 2.67in;width: 6.37in;page-break-inside: avoid;font-size: 8pt;">
+    <#list check.items as item>
+
+    <table width="6.37in" height="2.67in" style="border:1px solid black">
+
+        <tr>
+            <td>
+                <table width='100%' class='tabla'>
+                    <tr>
+                        <td style="width:35%">
+                            <#if RECORD_PDF[0].logo?has_content>
+                            <#assign x = RECORD_PDF[0].logo>
+                            <#escape x as x?html>
+                            <img src="${x}" style="margin: 0px" />
+                        </#escape>
+                    </#if>
+                        </td>
+                        <td align="left" style="font-size: 15px;vertical-align:middle;width:65%;padding-left:10px;font-weight: bold" height='50px'>Formato Egreso</td>
+                    </tr>
+                </table>
+
+                <table width="100%">
+
+                    <tr>
+                        <td style="width:50%;vertical-align: middle"><b>Cuenta de Retiro:</b></td>
+                        <td style="width:15%"></td>
+                        <td style="width:35%;vertical-align: middle" align="right">
+                            <b style="text-align: right">${check.fecha}</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="width:50%;vertical-align: middle">${check.subsidiaria} <br />${check.subsidiaria_address}</td>
+                        <td style="width:15%"></td>
+                        <td style="width:35%;vertical-align: middle">
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="width:60%;vertical-align: middle"><b>Banco:</b> ${check.nombre_banco} <br /><b>Cuenta:</b> ${check.numero_cuenta} </td>
+                        <td style="width:5%"></td>
+                        <td style="width:35%;vertical-align: middle">
+
+                        </td>
+                    </tr></table>
+
+                <table width="100%" class='tabla' style="margin-top:30px">
+                    <tr>
+                        <td style="width:60%;vertical-align: middle"><b>Cuenta Deposito:</b></td>
+                        <td style="width:5%"></td>
+                        <td style="width:35%;vertical-align: middle">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:60%;vertical-align: middle">${check.entity_direccion}<br /><b>Proveedor:</b> ${check.entity_banco} <br /><b>Cuenta:</b> ${check.entity_cuenta}</td>
+                        <td></td>
+                        <td></td>
+                    </tr></table>
+
+                <table width="100%" class='tabla' style="margin-top:20px">
+                    <tr>
+                        <td width="100%" height='50px'><b>Concepto:</b> ${check.notas}</td>
+
+                    </tr>
+                </table>
+                <table width='100%' class='tabla'>
+                    <tr>
+                        <td width='50%' height='50px'><b>Importe:</b> ${check.importe}</td>
+                        <td width='50%'><b>Monto Letra:</b> ${check.monto_letra}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</#list>
+</div>
+</#if>
+
+
+</#list>
+
+</body>
+</pdf>

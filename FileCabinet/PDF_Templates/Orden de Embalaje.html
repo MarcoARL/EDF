@@ -1,0 +1,233 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+        <#if .locale == "zh_CN">
+        <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+        <#elseif .locale == "zh_TW">
+        <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+        <#elseif .locale == "ja_JP">
+        <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+        <#elseif .locale == "ko_KR">
+        <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+        <#elseif .locale == "th_TH">
+        <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+    </#if>
+    <macrolist>
+        <macro id="nlheader">
+
+
+
+            <table class="headers" style="width: 100%; font-size: 10pt"><tr>
+                <td width="25%" rowspan="4">
+                    <#assign x = RECORD_PDF[0].subsidiaria_logo>
+                    <#escape x as x?html>
+                    <img src="${x}" style="float: left;" />
+                </#escape>
+                </td>
+                <td width="50%" rowspan="2" align="center" style="vertical-align:middle;font-weight: bold">Formato</td>
+                <td width="8%" style="vertical-align:middle;font-size:6pt;font-weight: bold;padding:0;margin:0">Fecha:</td>
+                <td width="17%" style="vertical-align:middle;font-size:6pt;padding:0;margin:0" align="center">${RECORD_PDF[0].fecha}</td>
+
+            </tr>
+                <tr>
+                    <td width="8%" style="vertical-align:middle;font-size:6pt;font-weight: bold;padding:0;margin:0">clave:</td>
+                    <td style="vertical-align:middle;font-size:6pt;padding:0;margin:0" align="center">FR-COM-007</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" align="center" style="vertical-align:middle;font-weight: bold">Lista de Empaque</td>
+                    <td width="8%" style="vertical-align:middle;font-size:6pt;font-weight: bold;padding:0;margin:0">Version:</td>
+                    <td style="vertical-align:middle;font-size:6pt;padding:0;margin:0" align="center">1</td>
+                </tr>
+                <tr>
+                    <td width="8%" style="vertical-align:middle;font-size:6pt;font-weight: bold;padding:0;margin:0">Paginas:</td>
+                    <td style="vertical-align:middle;font-size:6pt;padding:0;margin:0" align="center"><totalpages/></td>
+                </tr>
+
+            </table>
+
+
+            <table width="25%" align="right" style="margin-top:15px;border: 1px solid gray">
+                <tr>
+                    <td width="32%" style="vertical-align:middle;font-size:6pt;font-weight: bold;border: 1px solid gray">FOLIO:</td>
+                    <td width="68%" style="vertical-align:middle;font-size:6pt;padding:0;margin:0;border: 1px solid gray" align="center">${RECORD_PDF[0].folio}</td>
+                </tr>
+            </table>
+        </macro>
+        <macro id="nlfooter">
+            <table width='100%' style="margin-bottom:10px">
+                <tr>
+                    <td width='33%' style="color:white; background-color: navy;font-weight:bold;font-size:6pt">Bulto</td>
+                    <td width='33%' style="color:white; background-color: navy;font-weight:bold;font-size:6pt">Peso</td>
+                    <td width='34%' style="color:white; background-color: navy;font-weight:bold;font-size:6pt">Medidas</td>
+                </tr>
+                <tr>
+
+                    <td height='100px' style='border-left:1px solid black;border-bottom:1px solid black;vertical-align:middle;font-size:6pt;'>${RECORD_PDF[0].bultos}</td>
+                    <td height='100px' style='border-left:1px solid black;border-bottom:1px solid black;vertical-align:middle;font-size:6pt;'>${RECORD_PDF[0].peso}</td>
+                    <td height='100px' style='border-left:1px solid black;border-right:1px solid black;border-bottom:1px solid black;vertical-align:middle;font-size:6pt;'>${RECORD_PDF[0].medidas}</td>
+                </tr>
+            </table>
+            <table class="footer" width="100%"><tr>
+                <td align="center" width="100%"><span style="color:red">Propiedad de EDF Renewables Mexico</span></td>
+            </tr>
+                <tr>
+                    <td align="center" width="100%"><span style="color:navy">No debe utilizarse ni copiarse de ninguna forma sin el permiso expreso y por escrito de EDF Renewables Mexico</span></td>
+                </tr></table>
+        </macro>
+    </macrolist>
+    <style type="text/css">* {
+        <#if .locale == "zh_CN">
+        font-family: NotoSans, NotoSansCJKsc, sans-serif;
+        <#elseif .locale == "zh_TW">
+        font-family: NotoSans, NotoSansCJKtc, sans-serif;
+        <#elseif .locale == "ja_JP">
+        font-family: NotoSans, NotoSansCJKjp, sans-serif;
+        <#elseif .locale == "ko_KR">
+        font-family: NotoSans, NotoSansCJKkr, sans-serif;
+        <#elseif .locale == "th_TH">
+        font-family: NotoSans, NotoSansThai, sans-serif;
+        <#else>
+        font-family: NotoSans, sans-serif;
+        </#if>
+    }
+    table {
+        font-size: 9pt;
+        table-layout: fixed;
+    }
+    .headers tr td{
+        border: 1px solid navy;
+        color: navy;
+    }
+    th {
+        font-weight: bold;
+        font-size: 8pt;
+        vertical-align: middle;
+        padding: 5px 0px 5px 2px;
+
+        background-color: #e3e3e3;
+        color: #333333;
+    }
+    td {
+
+    }
+    td p { align:left; }
+    b {
+        font-weight: bold;
+        color: #333333;
+    }
+    table.header td {
+        padding: 0;
+        font-size: 10pt;
+    }
+    table.footer td {
+        padding: 0;
+        font-size: 8pt;
+    }
+    table.itemtable th {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    table.body td {
+        padding-top: 2px;
+    }
+    td.addressheader {
+        font-size: 8pt;
+        font-weight: bold;
+        padding-top: 6px;
+        padding-bottom: 2px;
+    }
+    td.address {
+        padding-top: 0;
+    }
+    span.title {
+        font-size: 28pt;
+    }
+    span.number {
+        font-size: 16pt;
+    }
+    span.itemname {
+        font-weight: bold;
+        line-height: 150%;
+    }
+    div.returnform {
+        width: 100%;
+
+        height: 200pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+    hr {
+        border-top: 1px dashed #d3d3d3;
+        width: 100%;
+        color: #ffffff;
+        background-color: #ffffff;
+        height: 1px;
+    }
+    </style>
+    </head>
+    <body header="nlheader" header-height="15%" footer="nlfooter" footer-height="120pt" padding="0.3in 0.3in 0.3in 0.3in" size="Letter">
+    <table style="width: 100%; margin-top: 10px;">
+        <tr>
+            <td align="center" width="50%" style="background-color:navy;color:white;font-weight:bold;font-size:6pt">Empresa:</td>
+            <td align="center" width="50%" style="background-color:navy;color:white;font-weight:bold;font-size:6pt">Consignado a:</td>
+        </tr>
+    </table>
+    <table width="100%">
+        <tr>
+            <td width="15%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Nombre:</td>
+            <td width="35%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">${RECORD_PDF[0].empresa_nombre}</td>
+            <td width="10%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Nombre:</td>
+            <td widt="40%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">${RECORD_PDF[0].consignado_nombre}</td>
+        </tr>
+        <tr>
+            <td width="15%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Direccion:</td>
+            <td width="35%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">${RECORD_PDF[0].empresa_direccion}</td>
+            <td width="10%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Direccion:</td>
+            <td widt="40%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">${RECORD_PDF[0].consignado_direccion}</td>
+        </tr>
+        <tr>
+            <td width="15%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Telefono:</td>
+            <td width="35%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">${RECORD_PDF[0].empresa_telefono}</td>
+            <td width="10%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Telefono:</td>
+            <td widt="40%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">${RECORD_PDF[0].consignado_telefono}</td>
+        </tr>
+    </table>
+
+    <table style="width: 50%; margin-top: 10px;color:navy">
+        <tr>
+            <td width="20%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Pais de origen:</td>
+            <td width="45%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy"></td>
+            <td width="15%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">Incoterm:</td>
+            <td width="20%" style="vertical-align:middle;font-size:6pt;border: 1px solid navy">${RECORD_PDF[0].incoterm}</td>
+        </tr>
+    </table>
+
+    <#if RECORD_PDF[0].items?has_content>
+
+    <table class="itemtables" style="width: 100%; margin-top: 10px;border: 1px solid black">
+        <thead style="background-color:navy">
+        <tr>
+            <th width="12%" style="background-color:navy;color:white;font-size:6pt;font-weight:bold">Item</th>
+            <th width="12%" style="background-color:navy;color:white;font-size:6pt;font-weight:bold">Numero de Serie</th>
+            <th width="30%" style="background-color:navy;color:white;font-size:6pt;font-weight:bold">Descripción de Material/Servicio</th>
+            <th width="12%" style="background-color:navy;color:white;font-size:6pt;font-weight:bold">Cantidad Ordenada</th>
+            <th width="12%" style="background-color:navy;color:white;font-size:6pt;font-weight:bold">Cantidad enviada</th>
+            <th width="11%" style="background-color:navy;color:white;font-size:6pt;font-weight:bold">Unidad de Medida</th>
+            <th width="11%" style="background-color:navy;color:white;font-size:6pt;font-weight:bold">Peso</th>
+        </tr>
+        </thead>
+        <#list RECORD_PDF[0].items as tranline><tr>
+
+        <td width='12%' style="border-right: 1px solid black;vertical-align:middle;font-size:6pt;">${tranline.item}</td>
+        <td width='12%' style="border-right: 1px solid black;vertical-align:middle;font-size:6pt;">${tranline.serie}</td>
+        <td width='30%' style="border-right: 1px solid black;vertical-align:middle;font-size:6pt;">${tranline.descripcion}</td>
+        <td width='12%' style="border-right: 1px solid black;vertical-align:middle;font-size:6pt;">${tranline.qtyordenada}</td>
+        <td width='12%' style="border-right: 1px solid black;vertical-align:middle;font-size:6pt;">${tranline.qtyenviada}</td>
+        <td width='11%' style="border-right: 1px solid black;vertical-align:middle;font-size:6pt;">${tranline.units}</td>
+        <td width='11%' style="border-right: 1px solid black;vertical-align:middle;font-size:6pt;">${tranline.peso}</td>
+    </tr>
+    </#list></table>
+    </#if>
+    </body>
+</pdf>

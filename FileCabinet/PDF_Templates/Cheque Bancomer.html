@@ -1,0 +1,63 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+        <#if .locale == "zh_CN">
+        <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+        <#elseif .locale == "zh_TW">
+        <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+        <#elseif .locale == "ja_JP">
+        <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+        <#elseif .locale == "ko_KR">
+        <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+        <#elseif .locale == "th_TH">
+        <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+    </#if>
+    <style type="text/css">
+
+    </style>
+    </head>
+    <body  padding="0in 0in 0in 0in" width="6.38in" height="2.68in">
+
+    <#list records as check>
+
+    <table style="padding: 0.1in 0.1in 0.1in 1.55in" width="6.37in" height="2.67in" align="center">
+        <tr>
+            <td  align="center" colspan="3">
+
+            </td>
+        </tr>
+        <tr><td colspan="3"></td></tr>
+        <tr>
+            <td width="50%"></td>
+            <td width="25%" align="left" style="">
+                <p style="font-size: 7pt; vertical-align: bottom;padding: 0 0 0 0.3in">
+                    <b>${check.trandate}</b>
+                </p>
+            </td>
+            <td align="left" width="25%">
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td colspan="2" align="left" style="">
+                <p style="font-size: 7pt; vertical-align: bottom;padding: 0 0 0 0.6in">
+                    <b>${check.entity}</b>
+                </p>
+            </td>
+            <td align="left"><p style="font-size: 7pt; vertical-align: bottom; padding-left:0.5in">
+                ${check.total}
+            </p></td>
+        </tr>
+        <tr><td colspan="3" style=" font-size:7pt;vertical-align: bottom;"><b>(${check.totalwords})</b></td></tr>
+        <tr><td></td><td style="font-size:7pt"></td><td style=""></td></tr>
+        <tr><td></td><td></td><td style="font-size:7pt;vertical-align: top" align="center"><b></b></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+
+    </table>
+    <br />
+    </#list>
+    </body>
+</pdf>
